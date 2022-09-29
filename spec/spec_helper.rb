@@ -1,3 +1,4 @@
+require 'support/coverage'
 require 'frodata'
 require 'rspec/matchers' # required for 'equivalent-xml'
 require 'equivalent-xml'
@@ -14,6 +15,7 @@ RSpec.configure do |config|
 
   config.profile_examples = 3
   config.order = :random
+  config.raise_errors_for_deprecations!
 
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect

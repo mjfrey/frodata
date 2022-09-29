@@ -8,6 +8,7 @@ module FrOData
         if (@value.nil? || @value.empty?) && (strict? && allows_nil?)
           nil
         else
+          return nil if @value.empty?
           BigDecimal(@value)
         end
       end
@@ -15,7 +16,7 @@ module FrOData
       # Sets the property value
       # @params new_value something BigDecimal() can parse
       def value=(new_value)
-        validate(BigDecimal(new_value.to_s))
+        validate(BigDecimal(new_value.to_s)) unless new_value.to_s.empty?
         @value = new_value.to_s
       end
 

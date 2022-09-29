@@ -22,6 +22,14 @@ module FrOData
         end
       end
 
+      def to_s
+        "Proxy #{object_id}"
+      end
+
+      def inspect
+        "Proxy #{object_id}"
+      end
+
       private
 
       attr_reader :entity, :nav_name

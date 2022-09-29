@@ -33,6 +33,14 @@ module FrOData
       @container    = options[:container]
     end
 
+    def to_s
+      "#{self.class.name}/#{@id}"
+    end
+
+    def inspect
+      "#{self.class.name}/#{@id}"
+    end
+
     # Provided for Enumerable functionality
     #
     # @param block [block] a block to evaluate

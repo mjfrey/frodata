@@ -79,7 +79,7 @@ module FrOData
           process_results(&block)
           unless next_page.nil?
             # ensure request gets executed with the same options
-            query.execute(URI.decode next_page_url).each(&block)
+            query.execute(next_page_url).each(&block)
           end
         end
       end
@@ -96,6 +96,7 @@ module FrOData
       # @return [self]
       def validate_response!
         if error = FrOData::Errors::ERROR_MAP[status]
+          logger.warn "response failed validation, #{status}, #{response}\n\n#{response.body}\n\n"
           raise error.new(response, error_message)
         end
       end

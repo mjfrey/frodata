@@ -36,6 +36,14 @@ module FrOData
       @errors = []
     end
 
+    def to_s
+      "#{self.class.name}/#{@id}"
+    end
+
+    def inspect
+      "#{self.class.name}/#{@id}"
+    end
+
     def namespace
       @namespace ||= type.rpartition('.').first
     end

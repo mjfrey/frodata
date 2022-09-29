@@ -71,6 +71,8 @@ module FrOData
 
       def url_value(value)
         property.value = value
+        return "null" if value.nil?
+
         property.url_value
       rescue
         value

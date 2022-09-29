@@ -141,7 +141,6 @@ module FrOData
       else
         klass = ::FrOData::PropertyRegistry[property_type]
       end
-
       if klass.nil?
         raise RuntimeError, "Unknown property type: #{property_type}"
       else
