@@ -1,3 +1,5 @@
+# :warning: Modifications made to work with ruby 3 & Dynamics 365. May not work in other environments.
+
 [![CircleCI](https://circleci.com/gh/seesaw/frodata/tree/s%26m.svg?style=svg)](https://circleci.com/gh/seesaw/frodata/tree/s%26m)
 
 # FrOData - Free OData V4.0 library for Ruby
