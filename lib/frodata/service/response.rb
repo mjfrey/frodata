@@ -79,7 +79,7 @@ module FrOData
           process_results(&block)
           unless next_page.nil?
             # ensure request gets executed with the same options
-            query.execute(next_page_url).each(&block)
+            query.execute(next_page).each(&block)
           end
         end
       end
