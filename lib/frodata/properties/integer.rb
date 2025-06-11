@@ -18,7 +18,7 @@ module FrOData
       # @params new_value [to_i]
       def value=(new_value)
         validate(new_value.to_i)
-        @value = new_value.to_i.to_s
+        @value = new_value.nil? ? nil : new_value.to_i.to_s
       end
 
       # The FrOData type name
@@ -37,7 +37,7 @@ module FrOData
       end
 
       def max_value
-        @max ||= (2**exponent_size)-1
+        @max ||= (2**exponent_size) - 1
       end
     end
 

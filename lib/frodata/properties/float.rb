@@ -18,7 +18,7 @@ module FrOData
       # @params new_value [to_f]
       def value=(new_value)
         validate(new_value.to_f)
-        @value = new_value.to_f.to_s
+        @value = new_value.nil? ? nil : new_value.to_f.to_s
       end
 
       # The FrOData type name
